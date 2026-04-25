@@ -24,6 +24,9 @@
 - Distributed testing responsibilities among team members.
 - Agreed to begin unit test development this sprint.
 
+## Backlog Link
+[View Product & Sprint Backlog](https://docs.google.com/spreadsheets/d/1sV1Uap7xQDlHYhp4MC6lu6gxwZQAZ8Uj2NT8FR2hmAg/edit?usp=sharing)
+
 ## Next Steps
 
 - Start writing unit tests for assigned features.
