@@ -15,7 +15,7 @@ Group 7
 - Jyothsna Mysore Santhosh Kumar
 - Reshma Rao Chandukudlu Hosamane
 
-### Backlogs
+## Backlogs
 
 The Product Backlog and Sprint Backlog are maintained in a shared Google Sheet.
 
