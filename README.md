@@ -18,9 +18,8 @@ Group 7
 ## Repository Structure
 
 ```text
-/
 ├── README.md
-├── Chess Logic Files/        # Provided source code, game files, and specification
+├── Chess Logic Files/       # Provided source code, game files, and specification
 ├── meetings/                # Minutes of Scrum meetings
 ├── backlogs/                # Product backlog and sprint backlog
 ├── reports/                 # Test documentation and execution reports
