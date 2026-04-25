@@ -19,7 +19,7 @@ Group 7
 
 The Product Backlog and Sprint Backlog are maintained in a shared Google Sheet.
 
-- [View Product and Sprint Backlog status]/(https://docs.google.com/spreadsheets/d/1sV1Uap7xQDlHYhp4MC6lu6gxwZQAZ8Uj2NT8FR2hmAg/edit?usp=sharing)
+- [View Product and Sprint Backlog status](https://docs.google.com/spreadsheets/d/1sV1Uap7xQDlHYhp4MC6lu6gxwZQAZ8Uj2NT8FR2hmAg/edit?usp=sharing)
 
 ## Repository Structure
 
