@@ -1,9 +1,10 @@
 # Sprint Planning Meeting
 
 **Date:** 04/25/2026  
-**Time:**10 am CST
-**Duration:** 1.5 hours
-**Members Present:** 
+**Time:** 10 am CST  
+**Duration:** 1.5 hours  
+
+**Members Present:**
 - Benat Froemming-Aldanondo
 - Blein Bekele
 - Jyothsna Mysore Santhosh Kumar
