@@ -1,12 +1,10 @@
 # Sprint Planning Meeting
 
 **Date:** 04/25/2026  
+**Time:** 10 am CST  
+**Duration:** 1.5 hours  
 
-**Time:**10 am CST
-
-**Duration:** 1.5 hours
-
-**Members Present:** 
+**Members Present:**
 - Benat Froemming-Aldanondo
 - Blein Bekele
 - Jyothsna Mysore Santhosh Kumar
@@ -25,6 +23,9 @@
 - Created first version of sprint backlog.
 - Distributed testing responsibilities among team members.
 - Agreed to begin unit test development this sprint.
+
+## Backlog Link
+[View Product & Sprint Backlog](https://docs.google.com/spreadsheets/d/1sV1Uap7xQDlHYhp4MC6lu6gxwZQAZ8Uj2NT8FR2hmAg/edit?usp=sharing)
 
 ## Next Steps
 
