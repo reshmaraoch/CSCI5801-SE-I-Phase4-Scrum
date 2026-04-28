@@ -199,7 +199,7 @@ class TestFreezeSpell:
 
 #Tests for Jump Spell
 class TestJumpSpellFeatures:
-        """Unit test cases for Jump Spell features"""
+    """Unit test cases for Jump Spell features"""
 
     def test_jump_starts_with_three_charges_for_both_players(self):
         game = SpellChessGame()
