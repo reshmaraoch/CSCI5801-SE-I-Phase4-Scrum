@@ -17,31 +17,32 @@ from spell_logic import SpellChessGame, squares_in_3x3, squares_in_jump_range
 #  Demo tests — provided to students as examples                      #
 # ------------------------------------------------------------------ #
 
-# class TestFreezeTarget:
-#     """Casting Freeze should mark the opponent's color as frozen."""
+class TestFreezeTarget:
+    """Casting Freeze should mark the opponent's color as frozen."""
 
-#     def test_freeze_affects_opponent_not_caster(self):
-#         game = SpellChessGame()
-#         # White casts freeze
-#         game.cast_freeze(chess.E5)
-#         # The frozen color should be Black (the opponent), not White
-#         assert game.freeze_effect_color == chess.BLACK
+    def test_freeze_affects_opponent_not_caster(self):
+        game = SpellChessGame()
+        # White casts freeze
+        game.cast_freeze(chess.E5)
+        # The frozen color should be Black (the opponent), not White
+        assert game.freeze_effect_color == chess.BLACK
 
 
-# class TestNewGameResetsBoard:
-#     """Calling new_game() should bring the board back to the starting position."""
+class TestNewGameResetsBoard:
+    """Calling new_game() should bring the board back to the starting position."""
 
-#     def test_board_resets_after_moves(self):
-#         game = SpellChessGame()
-#         game.board.push_san("e4")
-#         game.new_game()
-#         assert game.board.fen() == chess.STARTING_FEN
+    def test_board_resets_after_moves(self):
+        game = SpellChessGame()
+        game.board.push_san("e4")
+        game.new_game()
+        assert game.board.fen() == chess.STARTING_FEN
 
 
 # ------------------------------------------------------------------ #
 #  YOUR TESTS GO BELOW                                                #
 #  Write tests that check the rules from SPELL_CHESS_RULES.md.        #
 #  If a test fails, you've found a bug — document it!                 #
+<<<<<<< HEAD
 # ------------------------------------------------------------------ #
 
 # tests standard chess moves
@@ -159,3 +160,6 @@ class TestStandardChess:
         assert result is True
         assert game.board.piece_at(chess.D6) is not None
         assert game.board.piece_at(chess.D5) is None
+=======
+# ------------------------------------------------------------------ #
+>>>>>>> 8faf33053924e2c12094e049a8e6b2b2e00af25f
