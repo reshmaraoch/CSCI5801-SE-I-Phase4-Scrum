@@ -152,3 +152,107 @@ class TestJumpSpellFeatures:
         game.cast_jump(chess.B1, chess.A3)
 
         assert game.jump_cooldown[chess.WHITE] == 2
+        
+    
+    
+    
+    def test_jump_ignores_pieces_in_between(self):
+        game = SpellChessGame()
+        game.cast_jump(chess.B1, chess.D3)
+        assert game.board.piece_at(chess.D3).piece_type == chess.KNIGHT
+        assert game.board.piece_at(chess.B1) is None
+        
+    def test_jump_fails_if_destination_occupied_by_self(self):
+        game = SpellChessGame()
+        ok = game.cast_jump(chess.B1, chess.C2)
+        assert not ok
+    
+    def test_jump_fails_if_destination_occupied_by_opponent(self):
+        game = SpellChessGame()
+        game.make_move(chess.E2, chess.E4)
+        game.make_move(chess.E7, chess.E5)
+        ok = game.cast_jump(chess.E4, chess.E5)
+        assert not ok
+        
+    def text_jump_cooldown_set_to_2_after_cast(self):
+        game = SpellChessGame()
+        game.cast_jump(chess.B1, chess.D3)
+        assert game.jump_cooldown[chess.WHITE] == 2
+        
+    def test_jump_cooldown_decrements_each_caster_turn(self):
+        game = SpellChessGame()
+        game.cast_jump(chess.B1, chess.D3)
+        game.make_move(chess.E2, chess.E4)
+        game.make_move(chess.E7, chess.E5)
+        assert game.jump_cooldown[chess.WHITE] == 1 
+    
+    def test_jump_recast_blocked_during_cooldown(self):
+        game = SpellChessGame()
+        game.cast_jump(chess.B1, chess.D3) 
+        game.make_move(chess.E2, chess.E4)
+        game.make_move(chess.E7, chess.E5)
+        ok = game.cast_jump(chess.G1, chess.F3)
+        assert not ok
+        
+    def test_new_game_resets_jump_charges_and_cooldown(self):
+        game = SpellChessGame()
+        game.cast_jump(chess.B1, chess.D3)
+        game.new_game()
+        assert game.jump_remaining[chess.WHITE] == 3
+        assert game.jump_remaining[chess.BLACK] == 3
+        assert game.jump_cooldown[chess.WHITE] == 0
+        assert game.jump_cooldown[chess.BLACK] == 0
+        
+
+class TestGameStateDisplay:
+    """Unit test cases for Test Game Display."""
+    
+    def test_status_shows_whose_turn(self):
+        game = SpellChessGame()
+        assert "white" in game.status_text().lower()
+        game.make_move(chess.E2, chess.E4)
+        assert "black" in game.status_text().lower()
+        
+    def test_status_shows_check(self):
+        game = SpellChessGame()
+        game.make_move(chess.E2, chess.E4)
+        game.make_move(chess.E7, chess.E5)
+        game.make_move(chess.D1, chess.H5)
+        game.make_move(chess.B8, chess.C6)
+        game.make_move(chess.F1, chess.C4)
+        game.make_move(chess.G8, chess.F6)
+        game.make_move(chess.H5, chess.F7)
+        assert "check" in game.status_text().lower()
+        
+    def test_freeze_label_shows_current_player_charges(self):
+        game = SpellChessGame()
+        assert "5" in game.freeze_info_text()
+        game.cast_freeze(chess.E4)
+        assert "4" in game.freeze_info_text()
+        
+    def test_freeze_label_shows_cooldown_turns(self):
+        game = SpellChessGame()
+        game.cast_freeze(chess.E4)
+        assert "3" in game.freeze_info_text()
+        
+    def test_jump_label_shows_cooldown_turns(self):
+        game = SpellChessGame()
+        game.cast_jump(chess.B1, chess.C3)
+        assert "2" in game.jump_info_text()
+        
+    def test_freeze_label_shows_frozen_note(self):
+        game = SpellChessGame()
+        game.cast_freeze(chess.E7)
+        game.make_move(chess.E2, chess.E4)
+        assert game.current_turn() == chess.BLACK
+        assert "frozen" in game.freeze_info_text().lower()
+    
+    
+        
+
+    
+    
+        
+    
+        
+        
