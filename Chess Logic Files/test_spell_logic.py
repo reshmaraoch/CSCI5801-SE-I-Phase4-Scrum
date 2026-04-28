@@ -203,7 +203,7 @@ class TestJumpSpellFeatures:
         assert game.jump_cooldown[chess.WHITE] == 0
         assert game.jump_cooldown[chess.BLACK] == 0
         
-
+    
 class TestGameStateDisplay:
     """Unit test cases for Test Game Display."""
     
