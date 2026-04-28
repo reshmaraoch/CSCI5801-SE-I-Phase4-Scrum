@@ -12,12 +12,14 @@
 
 ## Topics Discussed
 
-
+  - Testing scope (contents of game application spec)
+  - Functionality included in `spell_logic.py`
 
 ## Actions Taken
 
-
+  - Reorganize sprint backlog
+  - Redistribute sprint backlog items
+    
 ## Next Steps
 
 - Start writing unit tests for assigned features.
-- Update backlog progress during daily Scrum meetings.
