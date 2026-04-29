@@ -1,0 +1,340 @@
+jyothsnams@Jyothsnas-MacBook-Pro CSCI5801-SE-I-Phase4-Scrum % python3 -m pytest test_spell_logic.py -v
+============================================================ test session starts =============================================================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Library/Developer/CommandLineTools/usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/jyothsnams/Desktop/Masters-Coursework/Software Engineering/CSCI5801-SE-I-Phase4-Scrum
+collected 0 items                                                                                                                            
+
+=========================================================== no tests ran in 0.00s ============================================================
+
+jyothsnams@Jyothsnas-MacBook-Pro Chess Logic Files % python3 -m pytest test_spell_logic.py -v
+============================================================ test session starts =============================================================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Library/Developer/CommandLineTools/usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/jyothsnams/Desktop/Masters-Coursework/Software Engineering/CSCI5801-SE-I-Phase4-Scrum/Chess Logic Files
+collected 44 items                                                                                                                           
+
+test_spell_logic.py::TestStandardChess::test_pawn_single_advance PASSED                                                                [  2%]
+test_spell_logic.py::TestStandardChess::test_pawn_double_advance_at_start PASSED                                                       [  4%]
+test_spell_logic.py::TestStandardChess::test_pawn_cannot_double_advance_after_start PASSED                                             [  6%]
+test_spell_logic.py::TestStandardChess::test_pawn_captures_diagonally PASSED                                                           [  9%]
+test_spell_logic.py::TestStandardChess::test_pawn_cannot_capture_straight PASSED                                                       [ 11%]
+test_spell_logic.py::TestStandardChess::test_castling_kingside PASSED                                                                  [ 13%]
+test_spell_logic.py::TestStandardChess::test_castling_queenside FAILED                                                                 [ 15%]
+test_spell_logic.py::TestStandardChess::test_en_passant FAILED                                                                         [ 18%]
+test_spell_logic.py::TestFreezeSpell::test_initial_freeze_charges PASSED                                                               [ 20%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_charge_reduction FAILED                                                              [ 22%]
+test_spell_logic.py::TestFreezeSpell::test_no_freeze_when_zero_charges PASSED                                                          [ 25%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_once_per_turn PASSED                                                                 [ 27%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_valid_center_square PASSED                                                           [ 29%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_3x3_area FAILED                                                                      [ 31%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_affects_opponent_only FAILED                                                         [ 34%]
+test_spell_logic.py::TestFreezeSpell::test_frozen_opponent_piece_cannot_move PASSED                                                    [ 36%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_lasts_one_opponent_turn_only FAILED                                                  [ 38%]
+test_spell_logic.py::TestFreezeSpell::test_frozen_piece_still_blocks_movement_path PASSED                                              [ 40%]
+test_spell_logic.py::TestFreezeSpell::test_frozen_piece_still_gives_check PASSED                                                       [ 43%]
+test_spell_logic.py::TestFreezeSpell::test_no_valid_moves_when_all_moves_start_from_frozen_square PASSED                               [ 45%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_cooldown_set_to_three_after_cast FAILED                                              [ 47%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_cooldown_decreases_by_one_on_caster_turn FAILED                                      [ 50%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_recast_blocked_during_cooldown PASSED                                                [ 52%]
+test_spell_logic.py::TestFreezeSpell::test_new_game_resets_freeze_usage_and_cooldown PASSED                                            [ 54%]
+test_spell_logic.py::TestJumpSpellFeatures::test_initial_jump_charges PASSED                                                           [ 56%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_charge_consumption PASSED                                                        [ 59%]
+test_spell_logic.py::TestJumpSpellFeatures::test_no_jump_when_zero_charges PASSED                                                      [ 61%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_once_per_turn PASSED                                                             [ 63%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_valid_piece_and_destination PASSED                                               [ 65%]
+test_spell_logic.py::TestJumpSpellFeatures::test_king_cannot_jump FAILED                                                               [ 68%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_destination_must_be_within_chebyshev_distance_two FAILED                         [ 70%]
+test_spell_logic.py::TestJumpSpellFeatures::test_valid_jump_moves_piece_to_destination PASSED                                          [ 72%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_ignores_pieces_in_between PASSED                                                 [ 75%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_fails_if_destination_occupied_by_self FAILED                                     [ 77%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_fails_if_destination_occupied_by_opponent FAILED                                 [ 79%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_cooldown_decrements_each_caster_turn PASSED                                      [ 81%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_recast_blocked_during_cooldown PASSED                                            [ 84%]
+test_spell_logic.py::TestJumpSpellFeatures::test_new_game_resets_jump_charges_and_cooldown FAILED                                      [ 86%]
+test_spell_logic.py::TestGameStateDisplay::test_status_shows_whose_turn PASSED                                                         [ 88%]
+test_spell_logic.py::TestGameStateDisplay::test_status_shows_check PASSED                                                              [ 90%]
+test_spell_logic.py::TestGameStateDisplay::test_freeze_label_shows_current_player_charges FAILED                                       [ 93%]
+test_spell_logic.py::TestGameStateDisplay::test_freeze_label_shows_cooldown_turns FAILED                                               [ 95%]
+test_spell_logic.py::TestGameStateDisplay::test_jump_label_shows_cooldown_turns PASSED                                                 [ 97%]
+test_spell_logic.py::TestGameStateDisplay::test_freeze_label_shows_frozen_note FAILED                                                  [100%]
+
+================================================================== FAILURES ==================================================================
+_________________________________________________ TestStandardChess.test_castling_queenside __________________________________________________
+
+self = <test_spell_logic.TestStandardChess object at 0x10c2cc580>
+
+    def test_castling_queenside(self):
+        game = SpellChessGame()
+    
+        # clear squares
+        game.board.remove_piece_at(chess.D1)
+        game.board.remove_piece_at(chess.C1)
+    
+        result = game.make_move(chess.E1, chess.C1) # king to c1, rook implicitly to d1
+    
+>       assert result is True
+E       assert False is True
+
+test_spell_logic.py:139: AssertionError
+_____________________________________________________ TestStandardChess.test_en_passant ______________________________________________________
+
+self = <test_spell_logic.TestStandardChess object at 0x10c2cc250>
+
+    def test_en_passant(self):
+        game = SpellChessGame()
+        game.board.clear()
+    
+        white = chess.Piece(chess.PAWN, chess.WHITE)
+        black = chess.Piece(chess.PAWN, chess.BLACK)
+    
+        # start: white e5, black d7
+        game.board.set_piece_at(chess.E5, white)
+        game.board.set_piece_at(chess.D7, black)
+    
+        game.board.turn = chess.BLACK
+    
+        game.make_move(chess.D7, chess.D5)  # black double advances
+        result = game.make_move(chess.E5, chess.D6)  # white captures en passant
+    
+>       assert result is True
+E       assert False is True
+
+test_spell_logic.py:161: AssertionError
+________________________________________________ TestFreezeSpell.test_freeze_charge_reduction ________________________________________________
+
+self = <test_spell_logic.TestFreezeSpell object at 0x10c2ccfa0>
+
+    def test_freeze_charge_reduction(self):
+        game = SpellChessGame()
+        game.cast_freeze(chess.E5)
+>       assert game.freeze_remaining[chess.WHITE] == 4
+E       assert 5 == 4
+
+test_spell_logic.py:177: AssertionError
+____________________________________________________ TestFreezeSpell.test_freeze_3x3_area ____________________________________________________
+
+self = <test_spell_logic.TestFreezeSpell object at 0x10c2cafa0>
+
+    def test_freeze_3x3_area(self):
+        game = SpellChessGame()
+        game.cast_freeze(chess.E4)
+>       assert chess.E4 in game.freeze_effect_squares
+E       assert 28 in {19, 20, 21, 27, 29, 35, ...}
+E        +  where 28 = chess.E4
+E        +  and   {19, 20, 21, 27, 29, 35, ...} = <spell_logic.SpellChessGame object at 0x10c5653a0>.freeze_effect_squares
+
+test_spell_logic.py:196: AssertionError
+_____________________________________________ TestFreezeSpell.test_freeze_affects_opponent_only ______________________________________________
+
+self = <test_spell_logic.TestFreezeSpell object at 0x10c2ccb50>
+
+    def test_freeze_affects_opponent_only(self):
+        game = SpellChessGame()
+    
+        result = game.cast_freeze(chess.E5)
+    
+        assert result is True
+>       assert game.freeze_effect_color == chess.BLACK
+E       assert True == False
+E        +  where True = <spell_logic.SpellChessGame object at 0x10c4257f0>.freeze_effect_color
+E        +  and   False = chess.BLACK
+
+test_spell_logic.py:205: AssertionError
+__________________________________________ TestFreezeSpell.test_freeze_lasts_one_opponent_turn_only __________________________________________
+
+self = <test_spell_logic.TestFreezeSpell object at 0x10c2cc070>
+
+    def test_freeze_lasts_one_opponent_turn_only(self):
+        game = SpellChessGame()
+    
+        game.cast_freeze(chess.E7)
+    
+        blocked = game.make_move(chess.E7, chess.E5)
+    
+        game.make_move(chess.G1, chess.F3)
+    
+        allowed = game.make_move(chess.E7, chess.E5)
+    
+        assert blocked is False
+>       assert allowed is True
+E       assert False is True
+
+test_spell_logic.py:228: AssertionError
+________________________________________ TestFreezeSpell.test_freeze_cooldown_set_to_three_after_cast ________________________________________
+
+self = <test_spell_logic.TestFreezeSpell object at 0x10c51a430>
+
+    def test_freeze_cooldown_set_to_three_after_cast(self):
+        game = SpellChessGame()
+    
+        game.cast_freeze(chess.E5)
+    
+>       assert game.freeze_cooldown[chess.WHITE] == 3
+E       assert 2 == 3
+
+test_spell_logic.py:282: AssertionError
+____________________________________ TestFreezeSpell.test_freeze_cooldown_decreases_by_one_on_caster_turn ____________________________________
+
+self = <test_spell_logic.TestFreezeSpell object at 0x10c51a5b0>
+
+    def test_freeze_cooldown_decreases_by_one_on_caster_turn(self):
+        game = SpellChessGame()
+    
+        game.cast_freeze(chess.E5)
+    
+        starting_value = game.freeze_cooldown[chess.WHITE]
+    
+        game.make_move(chess.G1, chess.F3)   # White move
+        game.make_move(chess.G8, chess.F6)   # Black move
+        game.make_move(chess.F3, chess.G1)   # White turn starts again
+    
+        new_value = game.freeze_cooldown[chess.WHITE]
+    
+>       assert new_value == starting_value - 1
+E       assert 2 == (2 - 1)
+
+test_spell_logic.py:297: AssertionError
+________________________________________________ TestJumpSpellFeatures.test_king_cannot_jump _________________________________________________
+
+self = <test_spell_logic.TestJumpSpellFeatures object at 0x10c4eb610>
+
+    def test_king_cannot_jump(self):
+        game = SpellChessGame()
+    
+        # artificially place king selection attempt
+        game.board.set_piece_at(chess.E1, chess.Piece(chess.KING, chess.WHITE))
+    
+>       assert game.cast_jump(chess.E1, chess.E3) is False
+E       assert True is False
+E        +  where True = cast_jump(4, 20)
+E        +    where cast_jump = <spell_logic.SpellChessGame object at 0x10c3e1e80>.cast_jump
+E        +    and   4 = chess.E1
+E        +    and   20 = chess.E3
+
+test_spell_logic.py:355: AssertionError
+_____________________________ TestJumpSpellFeatures.test_jump_destination_must_be_within_chebyshev_distance_two ______________________________
+
+self = <test_spell_logic.TestJumpSpellFeatures object at 0x10c4eb4c0>
+
+    def test_jump_destination_must_be_within_chebyshev_distance_two(self):
+        game = SpellChessGame()
+    
+        result = game.cast_jump(chess.B1, chess.B4)
+    
+>       assert result is False
+E       assert True is False
+
+test_spell_logic.py:362: AssertionError
+___________________________________ TestJumpSpellFeatures.test_jump_fails_if_destination_occupied_by_self ____________________________________
+
+self = <test_spell_logic.TestJumpSpellFeatures object at 0x10c51adf0>
+
+    def test_jump_fails_if_destination_occupied_by_self(self):
+        game = SpellChessGame()
+    
+        ok = game.cast_jump(chess.B1, chess.C2)
+    
+>       assert not ok
+E       assert not True
+
+test_spell_logic.py:387: AssertionError
+_________________________________ TestJumpSpellFeatures.test_jump_fails_if_destination_occupied_by_opponent __________________________________
+
+self = <test_spell_logic.TestJumpSpellFeatures object at 0x10c51aa60>
+
+    def test_jump_fails_if_destination_occupied_by_opponent(self):
+        game = SpellChessGame()
+    
+        game.make_move(chess.E2, chess.E4)
+        game.make_move(chess.E7, chess.E5)
+    
+        ok = game.cast_jump(chess.E4, chess.E5)
+    
+>       assert not ok
+E       assert not True
+
+test_spell_logic.py:397: AssertionError
+____________________________________ TestJumpSpellFeatures.test_new_game_resets_jump_charges_and_cooldown ____________________________________
+
+self = <test_spell_logic.TestJumpSpellFeatures object at 0x10c2cc1c0>
+
+    def test_new_game_resets_jump_charges_and_cooldown(self):
+        game = SpellChessGame()
+    
+        game.cast_jump(chess.B1, chess.D3)
+    
+        game.new_game()
+>       assert game.jump_remaining[chess.WHITE] == 3
+E       assert 2 == 3
+
+test_spell_logic.py:434: AssertionError
+____________________________________ TestGameStateDisplay.test_freeze_label_shows_current_player_charges _____________________________________
+
+self = <test_spell_logic.TestGameStateDisplay object at 0x10c4eb190>
+
+    def test_freeze_label_shows_current_player_charges(self):
+        game = SpellChessGame()
+    
+        assert "5" in game.freeze_info_text()
+    
+        game.cast_freeze(chess.E4)
+    
+>       assert "4" in game.freeze_info_text()
+E       AssertionError: assert '4' in 'Freeze: 5  (cooldown 2)  — pieces in area are frozen'
+E        +  where 'Freeze: 5  (cooldown 2)  — pieces in area are frozen' = freeze_info_text()
+E        +    where freeze_info_text = <spell_logic.SpellChessGame object at 0x10c439550>.freeze_info_text
+
+test_spell_logic.py:468: AssertionError
+________________________________________ TestGameStateDisplay.test_freeze_label_shows_cooldown_turns _________________________________________
+
+self = <test_spell_logic.TestGameStateDisplay object at 0x10c4eb880>
+
+    def test_freeze_label_shows_cooldown_turns(self):
+        game = SpellChessGame()
+    
+        game.cast_freeze(chess.E4)
+    
+>       assert "3" in game.freeze_info_text()
+E       AssertionError: assert '3' in 'Freeze: 5  (cooldown 2)  — pieces in area are frozen'
+E        +  where 'Freeze: 5  (cooldown 2)  — pieces in area are frozen' = freeze_info_text()
+E        +    where freeze_info_text = <spell_logic.SpellChessGame object at 0x10c51a820>.freeze_info_text
+
+test_spell_logic.py:475: AssertionError
+__________________________________________ TestGameStateDisplay.test_freeze_label_shows_frozen_note __________________________________________
+
+self = <test_spell_logic.TestGameStateDisplay object at 0x10c4ebac0>
+
+    def test_freeze_label_shows_frozen_note(self):
+        game = SpellChessGame()
+    
+        game.cast_freeze(chess.E7)
+    
+        game.make_move(chess.E2, chess.E4)
+    
+>       assert game.current_turn() == chess.BLACK
+E       assert True == False
+E        +  where True = current_turn()
+E        +    where current_turn = <spell_logic.SpellChessGame object at 0x10c3e39d0>.current_turn
+E        +  and   False = chess.BLACK
+
+test_spell_logic.py:491: AssertionError
+========================================================== short test summary info ===========================================================
+FAILED test_spell_logic.py::TestStandardChess::test_castling_queenside - assert False is True
+FAILED test_spell_logic.py::TestStandardChess::test_en_passant - assert False is True
+FAILED test_spell_logic.py::TestFreezeSpell::test_freeze_charge_reduction - assert 5 == 4
+FAILED test_spell_logic.py::TestFreezeSpell::test_freeze_3x3_area - assert 28 in {19, 20, 21, 27, 29, 35, ...}
+FAILED test_spell_logic.py::TestFreezeSpell::test_freeze_affects_opponent_only - assert True == False
+FAILED test_spell_logic.py::TestFreezeSpell::test_freeze_lasts_one_opponent_turn_only - assert False is True
+FAILED test_spell_logic.py::TestFreezeSpell::test_freeze_cooldown_set_to_three_after_cast - assert 2 == 3
+FAILED test_spell_logic.py::TestFreezeSpell::test_freeze_cooldown_decreases_by_one_on_caster_turn - assert 2 == (2 - 1)
+FAILED test_spell_logic.py::TestJumpSpellFeatures::test_king_cannot_jump - assert True is False
+FAILED test_spell_logic.py::TestJumpSpellFeatures::test_jump_destination_must_be_within_chebyshev_distance_two - assert True is False
+FAILED test_spell_logic.py::TestJumpSpellFeatures::test_jump_fails_if_destination_occupied_by_self - assert not True
+FAILED test_spell_logic.py::TestJumpSpellFeatures::test_jump_fails_if_destination_occupied_by_opponent - assert not True
+FAILED test_spell_logic.py::TestJumpSpellFeatures::test_new_game_resets_jump_charges_and_cooldown - assert 2 == 3
+FAILED test_spell_logic.py::TestGameStateDisplay::test_freeze_label_shows_current_player_charges - AssertionError: assert '4' in 'Freeze: 5  (cooldown 2)  — pieces in area are frozen'
+FAILED test_spell_logic.py::TestGameStateDisplay::test_freeze_label_shows_cooldown_turns - AssertionError: assert '3' in 'Freeze: 5  (cooldown 2)  — pieces in area are frozen'
+FAILED test_spell_logic.py::TestGameStateDisplay::test_freeze_label_shows_frozen_note - assert True == False
+======================================================= 16 failed, 28 passed in 1.66s ========================================================
+jyothsnams@Jyothsnas-MacBook-Pro Chess Logic Files % 
