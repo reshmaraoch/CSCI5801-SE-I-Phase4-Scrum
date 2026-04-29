@@ -166,6 +166,36 @@ class TestStandardChess:
 class TestFreezeSpell:
     """Unit test cases for Freeze Spell features"""
 
+    def test_initial_freeze_charges(self):
+        game = SpellChessGame()
+        assert game.freeze_remaining[chess.WHITE] == 5
+        assert game.freeze_remaining[chess.BLACK] == 5
+
+    def test_freeze_charge_reduction(self):
+        game = SpellChessGame()
+        game.cast_freeze(chess.E5)
+        assert game.freeze_remaining[chess.WHITE] == 4
+
+    def test_no_freeze_when_zero_charges(self):
+        game = SpellChessGame()
+        game.freeze_remaining[chess.WHITE] = 0
+        assert game.cast_freeze(chess.E5) is False
+
+    def test_freeze_once_per_turn(self):
+        game = SpellChessGame()
+        assert game.cast_freeze(chess.E5) is True
+        assert game.cast_freeze(chess.D5) is False
+
+    def test_freeze_valid_center_square(self):
+        game = SpellChessGame()
+        assert game.cast_freeze(chess.E4) is True
+
+    def test_freeze_3x3_area(self):
+        game = SpellChessGame()
+        game.cast_freeze(chess.E4)
+        assert chess.E4 in game.freeze_effect_squares
+        assert chess.D3 in game.freeze_effect_squares
+
     def test_freeze_affects_opponent_only(self):
         game = SpellChessGame()
 
@@ -291,6 +321,38 @@ class TestFreezeSpell:
 #Tests for Jump Spell
 class TestJumpSpellFeatures:
     """Unit test cases for Jump Spell features"""
+
+    def test_initial_jump_charges(self):
+        game = SpellChessGame()
+        assert game.jump_remaining[chess.WHITE] == 3
+        assert game.jump_remaining[chess.BLACK] == 3
+
+    def test_jump_charge_consumption(self):
+        game = SpellChessGame()
+        game.cast_jump(chess.B1, chess.C3)
+        assert game.jump_remaining[chess.WHITE] == 2
+
+    def test_no_jump_when_zero_charges(self):
+        game = SpellChessGame()
+        game.jump_remaining[chess.WHITE] = 0
+        assert game.cast_jump(chess.B1, chess.C3) is False
+
+    def test_jump_once_per_turn(self):
+        game = SpellChessGame()
+        assert game.cast_jump(chess.B1, chess.C3) is True
+        assert game.cast_jump(chess.G1, chess.F3) is False
+
+    def test_jump_valid_piece_and_destination(self):
+        game = SpellChessGame()
+        assert game.cast_jump(chess.B1, chess.C3) is True
+
+    def test_king_cannot_jump(self):
+        game = SpellChessGame()
+
+        # artificially place king selection attempt
+        game.board.set_piece_at(chess.E1, chess.Piece(chess.KING, chess.WHITE))
+
+        assert game.cast_jump(chess.E1, chess.E3) is False
     
     def test_jump_destination_must_be_within_chebyshev_distance_two(self):
         game = SpellChessGame()
