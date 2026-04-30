@@ -1,0 +1,630 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.14.2, pytest-9.0.3, pluggy-1.6.0 -- /Library/Frameworks/Python.framework/Versions/3.14/bin/python3
+cachedir: .pytest_cache
+rootdir: /Users/bbekele4/Documents/SPRING26/CSCI5801/P4code/CSCI5801-SE-I-Phase4-Scrum/Chess Logic Files
+collecting ... collected 63 items
+
+test_spell_logic.py::TestStandardChess::test_pawn_single_advance PASSED  [  1%]
+test_spell_logic.py::TestStandardChess::test_pawn_double_advance_at_start PASSED [  3%]
+test_spell_logic.py::TestStandardChess::test_pawn_cannot_double_advance_after_start PASSED [  4%]
+test_spell_logic.py::TestStandardChess::test_pawn_captures_diagonally PASSED [  6%]
+test_spell_logic.py::TestStandardChess::test_pawn_cannot_capture_straight PASSED [  7%]
+test_spell_logic.py::TestStandardChess::test_rook_vertical_advance PASSED [  9%]
+test_spell_logic.py::TestStandardChess::test_rook_horizontal_advance PASSED [ 11%]
+test_spell_logic.py::TestStandardChess::test_rook_cannot_jump PASSED     [ 12%]
+test_spell_logic.py::TestStandardChess::test_knight_L_advance FAILED     [ 14%]
+test_spell_logic.py::TestStandardChess::test_knight_cannot_move_non_L FAILED [ 15%]
+test_spell_logic.py::TestStandardChess::test_knight_can_jump PASSED      [ 17%]
+test_spell_logic.py::TestStandardChess::test_bishop_diag_advance FAILED  [ 19%]
+test_spell_logic.py::TestStandardChess::test_bishop_cannot_jump FAILED   [ 20%]
+test_spell_logic.py::TestStandardChess::test_queen_vertical_advance FAILED [ 22%]
+test_spell_logic.py::TestStandardChess::test_queen_horizontal_advance FAILED [ 23%]
+test_spell_logic.py::TestStandardChess::test_queen_diag_advance FAILED   [ 25%]
+test_spell_logic.py::TestStandardChess::test_queen_cannot_jump FAILED    [ 26%]
+test_spell_logic.py::TestStandardChess::test_king_vertical_single_advance FAILED [ 28%]
+test_spell_logic.py::TestStandardChess::test_king_horizontal_single_advance FAILED [ 30%]
+test_spell_logic.py::TestStandardChess::test_king_diag_single_advance FAILED [ 31%]
+test_spell_logic.py::TestStandardChess::test_king_cannot_multi_advance FAILED [ 33%]
+test_spell_logic.py::TestStandardChess::test_pawn_promotion_to_queen FAILED [ 34%]
+test_spell_logic.py::TestStandardChess::test_pawn_promotion_to_knight FAILED [ 36%]
+test_spell_logic.py::TestStandardChess::test_castling_kingside PASSED    [ 38%]
+test_spell_logic.py::TestStandardChess::test_castling_queenside FAILED   [ 39%]
+test_spell_logic.py::TestStandardChess::test_en_passant FAILED           [ 41%]
+test_spell_logic.py::TestStandardChess::test_new_game_starting_position PASSED [ 42%]
+test_spell_logic.py::TestFreezeSpell::test_initial_freeze_charges PASSED [ 44%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_charge_reduction FAILED [ 46%]
+test_spell_logic.py::TestFreezeSpell::test_no_freeze_when_zero_charges PASSED [ 47%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_once_per_turn PASSED   [ 49%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_valid_center_square PASSED [ 50%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_3x3_area FAILED        [ 52%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_affects_opponent_only FAILED [ 53%]
+test_spell_logic.py::TestFreezeSpell::test_frozen_opponent_piece_cannot_move PASSED [ 55%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_lasts_one_opponent_turn_only FAILED [ 57%]
+test_spell_logic.py::TestFreezeSpell::test_frozen_piece_still_blocks_movement_path PASSED [ 58%]
+test_spell_logic.py::TestFreezeSpell::test_frozen_piece_still_gives_check PASSED [ 60%]
+test_spell_logic.py::TestFreezeSpell::test_no_valid_moves_when_all_moves_start_from_frozen_square PASSED [ 61%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_cooldown_set_to_three_after_cast FAILED [ 63%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_cooldown_decreases_by_one_on_caster_turn FAILED [ 65%]
+test_spell_logic.py::TestFreezeSpell::test_freeze_recast_blocked_during_cooldown PASSED [ 66%]
+test_spell_logic.py::TestFreezeSpell::test_new_game_resets_freeze_usage_and_cooldown PASSED [ 68%]
+test_spell_logic.py::TestJumpSpellFeatures::test_initial_jump_charges PASSED [ 69%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_charge_consumption PASSED [ 71%]
+test_spell_logic.py::TestJumpSpellFeatures::test_no_jump_when_zero_charges PASSED [ 73%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_once_per_turn PASSED [ 74%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_valid_piece_and_destination PASSED [ 76%]
+test_spell_logic.py::TestJumpSpellFeatures::test_king_cannot_jump FAILED [ 77%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_destination_must_be_within_chebyshev_distance_two FAILED [ 79%]
+test_spell_logic.py::TestJumpSpellFeatures::test_valid_jump_moves_piece_to_destination PASSED [ 80%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_ignores_pieces_in_between PASSED [ 82%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_fails_if_destination_occupied_by_self FAILED [ 84%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_fails_if_destination_occupied_by_opponent FAILED [ 85%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_cooldown_decrements_each_caster_turn PASSED [ 87%]
+test_spell_logic.py::TestJumpSpellFeatures::test_jump_recast_blocked_during_cooldown PASSED [ 88%]
+test_spell_logic.py::TestJumpSpellFeatures::test_new_game_resets_jump_charges_and_cooldown FAILED [ 90%]
+test_spell_logic.py::TestGameStateDisplay::test_status_shows_whose_turn PASSED [ 92%]
+test_spell_logic.py::TestGameStateDisplay::test_status_shows_check PASSED [ 93%]
+test_spell_logic.py::TestGameStateDisplay::test_freeze_label_shows_current_player_charges FAILED [ 95%]
+test_spell_logic.py::TestGameStateDisplay::test_freeze_label_shows_cooldown_turns FAILED [ 96%]
+test_spell_logic.py::TestGameStateDisplay::test_jump_label_shows_cooldown_turns PASSED [ 98%]
+test_spell_logic.py::TestGameStateDisplay::test_freeze_label_shows_frozen_note FAILED [100%]
+
+=================================== FAILURES ===================================
+___________________ TestStandardChess.test_knight_L_advance ____________________
+
+self = <test_spell_logic.TestStandardChess object at 0x1043bf250>
+
+    def test_knight_L_advance(self):
+        game = SpellChessGame()
+        game.board.remove_piece_at(chess.B2)
+        result = game.make_move(chess.B1, chess.A3)
+    
+        assert result is True
+        assert game.board.piece_at(chess.B1) is None
+>       assert game.board.piece_at(chess.A3) == chess.KNIGHT
+E       AssertionError: assert Piece.from_symbol('N') == 2
+E        +  where Piece.from_symbol('N') = piece_at(16)
+E        +    where piece_at = Board('rnbqkbnr/pppppppp/8/8/8/N7/P1PPPPPP/R1BQKBNR w KQkq - 1 1').piece_at
+E        +      where Board('rnbqkbnr/pppppppp/8/8/8/N7/P1PPPPPP/R1BQKBNR w KQkq - 1 1') = <spell_logic.SpellChessGame object at 0x1043bec50>.board
+E        +    and   16 = chess.A3
+E        +  and   2 = chess.KNIGHT
+
+test_spell_logic.py:152: AssertionError
+_______________ TestStandardChess.test_knight_cannot_move_non_L ________________
+
+self = <test_spell_logic.TestStandardChess object at 0x1044c6e40>
+
+    def test_knight_cannot_move_non_L(self):
+        game = SpellChessGame()
+    
+        result = game.make_move(chess.B1, chess.B3)
+    
+        assert result is False
+>       assert game.board.piece_at(chess.B1) == chess.KNIGHT
+E       AssertionError: assert Piece.from_symbol('N') == 2
+E        +  where Piece.from_symbol('N') = piece_at(1)
+E        +    where piece_at = Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1').piece_at
+E        +      where Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1') = <spell_logic.SpellChessGame object at 0x1045cf350>.board
+E        +    and   1 = chess.B1
+E        +  and   2 = chess.KNIGHT
+
+test_spell_logic.py:160: AssertionError
+__________________ TestStandardChess.test_bishop_diag_advance __________________
+
+self = <test_spell_logic.TestStandardChess object at 0x1043af690>
+
+    def test_bishop_diag_advance(self):
+        game = SpellChessGame()
+    
+        result = game.make_move(chess.C1, chess.A3)
+    
+>       assert result is True
+E       assert False is True
+
+test_spell_logic.py:174: AssertionError
+__________________ TestStandardChess.test_bishop_cannot_jump ___________________
+
+self = <test_spell_logic.TestStandardChess object at 0x1043afaf0>
+
+    def test_bishop_cannot_jump(self):
+        game = SpellChessGame()
+    
+        result = game.make_move(chess.C1, chess.E3)
+    
+        assert result is False
+>       assert game.board.piece_at(chess.C1) == chess.BISHOP
+E       AssertionError: assert Piece.from_symbol('B') == 3
+E        +  where Piece.from_symbol('B') = piece_at(2)
+E        +    where piece_at = Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1').piece_at
+E        +      where Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1') = <spell_logic.SpellChessGame object at 0x1045e3cb0>.board
+E        +    and   2 = chess.C1
+E        +  and   3 = chess.BISHOP
+
+test_spell_logic.py:184: AssertionError
+________________ TestStandardChess.test_queen_vertical_advance _________________
+
+self = <test_spell_logic.TestStandardChess object at 0x10435d980>
+
+    def test_queen_vertical_advance(self):
+        game = SpellChessGame()
+        game.board.remove_piece_at(chess.D2)
+    
+        result = game.make_move(chess.D1,chess.D3)
+    
+        assert result is True
+        assert game.board.piece_at(chess.D1) is None
+>       assert game.board.piece_at(chess.D3) == chess.QUEEN
+E       AssertionError: assert Piece.from_symbol('Q') == 5
+E        +  where Piece.from_symbol('Q') = piece_at(19)
+E        +    where piece_at = Board('rnbqkbnr/pppppppp/8/8/8/3Q4/PPP1PPPP/RNB1KBNR w KQkq - 1 1').piece_at
+E        +      where Board('rnbqkbnr/pppppppp/8/8/8/3Q4/PPP1PPPP/RNB1KBNR w KQkq - 1 1') = <spell_logic.SpellChessGame object at 0x1045e35b0>.board
+E        +    and   19 = chess.D3
+E        +  and   5 = chess.QUEEN
+
+test_spell_logic.py:195: AssertionError
+_______________ TestStandardChess.test_queen_horizontal_advance ________________
+
+self = <test_spell_logic.TestStandardChess object at 0x1043a8950>
+
+    def test_queen_horizontal_advance(self):
+        game = SpellChessGame()
+        game.board.remove_piece_at(chess.C1)
+    
+        result = game.make_move(chess.D1,chess.C1)
+    
+        assert result is True
+        assert game.board.piece_at(chess.D1) is None
+>       assert game.board.piece_at(chess.C1) == chess.QUEEN
+E       AssertionError: assert Piece.from_symbol('Q') == 5
+E        +  where Piece.from_symbol('Q') = piece_at(2)
+E        +    where piece_at = Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNQ1KBNR w KQkq - 1 1').piece_at
+E        +      where Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNQ1KBNR w KQkq - 1 1') = <spell_logic.SpellChessGame object at 0x1040ddcc0>.board
+E        +    and   2 = chess.C1
+E        +  and   5 = chess.QUEEN
+
+test_spell_logic.py:205: AssertionError
+__________________ TestStandardChess.test_queen_diag_advance ___________________
+
+self = <test_spell_logic.TestStandardChess object at 0x1043a8c50>
+
+    def test_queen_diag_advance(self):
+        game = SpellChessGame()
+        game.board.remove_piece_at(chess.C2)
+    
+        result = game.make_move(chess.D1,chess.B3)
+    
+        assert result is True
+        assert game.board.piece_at(chess.D1) is None
+>       assert game.board.piece_at(chess.B3) == chess.QUEEN
+E       AssertionError: assert Piece.from_symbol('Q') == 5
+E        +  where Piece.from_symbol('Q') = piece_at(17)
+E        +    where piece_at = Board('rnbqkbnr/pppppppp/8/8/8/1Q6/PP1PPPPP/RNB1KBNR w KQkq - 1 1').piece_at
+E        +      where Board('rnbqkbnr/pppppppp/8/8/8/1Q6/PP1PPPPP/RNB1KBNR w KQkq - 1 1') = <spell_logic.SpellChessGame object at 0x1042a34d0>.board
+E        +    and   17 = chess.B3
+E        +  and   5 = chess.QUEEN
+
+test_spell_logic.py:215: AssertionError
+___________________ TestStandardChess.test_queen_cannot_jump ___________________
+
+self = <test_spell_logic.TestStandardChess object at 0x1045b4ec0>
+
+    def test_queen_cannot_jump(self):
+        game = SpellChessGame()
+    
+        result = game.make_move(chess.D1, chess.D3)
+    
+        assert result is False
+>       assert game.board.piece_at(chess.D1) == chess.QUEEN
+E       AssertionError: assert Piece.from_symbol('Q') == 5
+E        +  where Piece.from_symbol('Q') = piece_at(3)
+E        +    where piece_at = Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1').piece_at
+E        +      where Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1') = <spell_logic.SpellChessGame object at 0x1043a9a90>.board
+E        +    and   3 = chess.D1
+E        +  and   5 = chess.QUEEN
+
+test_spell_logic.py:223: AssertionError
+_____________ TestStandardChess.test_king_vertical_single_advance ______________
+
+self = <test_spell_logic.TestStandardChess object at 0x1045b5230>
+
+    def test_king_vertical_single_advance(self):
+        game = SpellChessGame()
+        game.board.remove_piece_at(chess.E2)
+    
+        result = game.make_move(chess.E1, chess.E2)
+    
+        assert result is True
+        assert game.board.piece_at(chess.E1) is None
+>       assert game.board.piece_at(chess.E2) == chess.KING
+E       AssertionError: assert Piece.from_symbol('K') == 6
+E        +  where Piece.from_symbol('K') = piece_at(12)
+E        +    where piece_at = Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPKPPP/RNBQ1BNR w kq - 1 1').piece_at
+E        +      where Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPKPPP/RNBQ1BNR w kq - 1 1') = <spell_logic.SpellChessGame object at 0x1045b6ba0>.board
+E        +    and   12 = chess.E2
+E        +  and   6 = chess.KING
+
+test_spell_logic.py:234: AssertionError
+____________ TestStandardChess.test_king_horizontal_single_advance _____________
+
+self = <test_spell_logic.TestStandardChess object at 0x10437dbd0>
+
+    def test_king_horizontal_single_advance(self):
+        game = SpellChessGame()
+        game.board.remove_piece_at(chess.F1)
+    
+        result = game.make_move(chess.E1, chess.F1)
+    
+        assert result is True
+        assert game.board.piece_at(chess.E1) is None
+>       assert game.board.piece_at(chess.F1) == chess.KING
+E       AssertionError: assert Piece.from_symbol('K') == 6
+E        +  where Piece.from_symbol('K') = piece_at(5)
+E        +    where piece_at = Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQ1KNR w kq - 1 1').piece_at
+E        +      where Board('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQ1KNR w kq - 1 1') = <spell_logic.SpellChessGame object at 0x1045b6780>.board
+E        +    and   5 = chess.F1
+E        +  and   6 = chess.KING
+
+test_spell_logic.py:244: AssertionError
+_______________ TestStandardChess.test_king_diag_single_advance ________________
+
+self = <test_spell_logic.TestStandardChess object at 0x10437dd10>
+
+    def test_king_diag_single_advance(self):
+        game = SpellChessGame()
+        game.board.remove_piece_at(chess.D2)
+    
+        result = game.make_move(chess.E1, chess.D2)
+    
+        assert result is True
+        assert game.board.piece_at(chess.E1) is None
+>       assert game.board.piece_at(chess.D2) == chess.KING
+E       AssertionError: assert Piece.from_symbol('K') == 6
+E        +  where Piece.from_symbol('K') = piece_at(11)
+E        +    where piece_at = Board('rnbqkbnr/pppppppp/8/8/8/8/PPPKPPPP/RNBQ1BNR w kq - 1 1').piece_at
+E        +      where Board('rnbqkbnr/pppppppp/8/8/8/8/PPPKPPPP/RNBQ1BNR w kq - 1 1') = <spell_logic.SpellChessGame object at 0x1045b6360>.board
+E        +    and   11 = chess.D2
+E        +  and   6 = chess.KING
+
+test_spell_logic.py:254: AssertionError
+_______________ TestStandardChess.test_king_cannot_multi_advance _______________
+
+self = <test_spell_logic.TestStandardChess object at 0x103ffb4a0>
+
+    def test_king_cannot_multi_advance(self):
+        game = SpellChessGame()
+        game.board.remove_piece_at(chess.E2)
+    
+        result = game.make_move(chess.E1, chess.E3)
+    
+        assert result is False
+>       assert game.board.piece_at(chess.E1) == chess.KING
+E       AssertionError: assert Piece.from_symbol('K') == 6
+E        +  where Piece.from_symbol('K') = piece_at(4)
+E        +    where piece_at = Board('rnbqkbnr/pppppppp/8/8/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 1').piece_at
+E        +      where Board('rnbqkbnr/pppppppp/8/8/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 1') = <spell_logic.SpellChessGame object at 0x1045b5d30>.board
+E        +    and   4 = chess.E1
+E        +  and   6 = chess.KING
+
+test_spell_logic.py:263: AssertionError
+________________ TestStandardChess.test_pawn_promotion_to_queen ________________
+
+self = <test_spell_logic.TestStandardChess object at 0x1043c7450>
+
+    def test_pawn_promotion_to_queen(self):
+        game = SpellChessGame()
+        game.board.set_piece_at(chess.E1, chess.Piece(chess.KING, chess.WHITE))
+        game.board.set_piece_at(chess.E8, chess.Piece(chess.KING, chess.BLACK))
+        game.board.set_piece_at(chess.E7, chess.Piece(chess.PAWN, chess.WHITE))
+    
+        result = game.make_move(chess.E7, chess.E8, promotion=chess.QUEEN)
+    
+>       assert result is True
+E       assert False is True
+
+test_spell_logic.py:274: AssertionError
+_______________ TestStandardChess.test_pawn_promotion_to_knight ________________
+
+self = <test_spell_logic.TestStandardChess object at 0x1043c75d0>
+
+    def test_pawn_promotion_to_knight(self):
+        game = SpellChessGame()
+        game.board.set_piece_at(chess.E1, chess.Piece(chess.KING, chess.WHITE))
+        game.board.set_piece_at(chess.E8, chess.Piece(chess.KING, chess.BLACK))
+        game.board.set_piece_at(chess.E7, chess.Piece(chess.PAWN, chess.WHITE))
+    
+        result = game.make_move(chess.E7, chess.E8, promotion=chess.KNIGHT)
+    
+>       assert result is True
+E       assert False is True
+
+test_spell_logic.py:287: AssertionError
+__________________ TestStandardChess.test_castling_queenside ___________________
+
+self = <test_spell_logic.TestStandardChess object at 0x1045bdc50>
+
+    def test_castling_queenside(self):
+        game = SpellChessGame()
+    
+        # clear squares
+        game.board.remove_piece_at(chess.D1)
+        game.board.remove_piece_at(chess.C1)
+    
+        result = game.make_move(chess.E1, chess.C1) # king to c1, rook implicitly to d1
+    
+>       assert result is True
+E       assert False is True
+
+test_spell_logic.py:316: AssertionError
+______________________ TestStandardChess.test_en_passant _______________________
+
+self = <test_spell_logic.TestStandardChess object at 0x1043b97f0>
+
+    def test_en_passant(self):
+        game = SpellChessGame()
+        game.board.clear()
+    
+        white = chess.Piece(chess.PAWN, chess.WHITE)
+        black = chess.Piece(chess.PAWN, chess.BLACK)
+    
+        # start: white e5, black d7
+        game.board.set_piece_at(chess.E5, white)
+        game.board.set_piece_at(chess.D7, black)
+    
+        game.board.turn = chess.BLACK
+    
+        game.make_move(chess.D7, chess.D5)  # black double advances
+        result = game.make_move(chess.E5, chess.D6)  # white captures en passant
+    
+>       assert result is True
+E       assert False is True
+
+test_spell_logic.py:338: AssertionError
+_________________ TestFreezeSpell.test_freeze_charge_reduction _________________
+
+self = <test_spell_logic.TestFreezeSpell object at 0x104372710>
+
+    def test_freeze_charge_reduction(self):
+        game = SpellChessGame()
+        game.cast_freeze(chess.E5)
+>       assert game.freeze_remaining[chess.WHITE] == 4
+E       assert 5 == 4
+
+test_spell_logic.py:386: AssertionError
+_____________________ TestFreezeSpell.test_freeze_3x3_area _____________________
+
+self = <test_spell_logic.TestFreezeSpell object at 0x1044c88d0>
+
+    def test_freeze_3x3_area(self):
+        game = SpellChessGame()
+        game.cast_freeze(chess.E4)
+>       assert chess.E4 in game.freeze_effect_squares
+E       assert 28 in {19, 20, 21, 27, 29, 35, ...}
+E        +  where 28 = chess.E4
+E        +  and   {19, 20, 21, 27, 29, 35, ...} = <spell_logic.SpellChessGame object at 0x10409cb50>.freeze_effect_squares
+
+test_spell_logic.py:405: AssertionError
+______________ TestFreezeSpell.test_freeze_affects_opponent_only _______________
+
+self = <test_spell_logic.TestFreezeSpell object at 0x1044c89e0>
+
+    def test_freeze_affects_opponent_only(self):
+        game = SpellChessGame()
+    
+        result = game.cast_freeze(chess.E5)
+    
+        assert result is True
+>       assert game.freeze_effect_color == chess.BLACK
+E       assert True == False
+E        +  where True = <spell_logic.SpellChessGame object at 0x1045f1180>.freeze_effect_color
+E        +  and   False = chess.BLACK
+
+test_spell_logic.py:414: AssertionError
+___________ TestFreezeSpell.test_freeze_lasts_one_opponent_turn_only ___________
+
+self = <test_spell_logic.TestFreezeSpell object at 0x1045ccd50>
+
+    def test_freeze_lasts_one_opponent_turn_only(self):
+        game = SpellChessGame()
+    
+        game.cast_freeze(chess.E7)
+    
+        blocked = game.make_move(chess.E7, chess.E5)
+    
+        game.make_move(chess.G1, chess.F3)
+    
+        allowed = game.make_move(chess.E7, chess.E5)
+    
+        assert blocked is False
+>       assert allowed is True
+E       assert False is True
+
+test_spell_logic.py:437: AssertionError
+_________ TestFreezeSpell.test_freeze_cooldown_set_to_three_after_cast _________
+
+self = <test_spell_logic.TestFreezeSpell object at 0x1045e0670>
+
+    def test_freeze_cooldown_set_to_three_after_cast(self):
+        game = SpellChessGame()
+    
+        game.cast_freeze(chess.E5)
+    
+>       assert game.freeze_cooldown[chess.WHITE] == 3
+E       assert 2 == 3
+
+test_spell_logic.py:491: AssertionError
+_____ TestFreezeSpell.test_freeze_cooldown_decreases_by_one_on_caster_turn _____
+
+self = <test_spell_logic.TestFreezeSpell object at 0x10435e000>
+
+    def test_freeze_cooldown_decreases_by_one_on_caster_turn(self):
+        game = SpellChessGame()
+    
+        game.cast_freeze(chess.E5)
+    
+        starting_value = game.freeze_cooldown[chess.WHITE]
+    
+        game.make_move(chess.G1, chess.F3)   # White move
+        game.make_move(chess.G8, chess.F6)   # Black move
+        game.make_move(chess.F3, chess.G1)   # White turn starts again
+    
+        new_value = game.freeze_cooldown[chess.WHITE]
+    
+>       assert new_value == starting_value - 1
+E       assert 2 == (2 - 1)
+
+test_spell_logic.py:506: AssertionError
+_________________ TestJumpSpellFeatures.test_king_cannot_jump __________________
+
+self = <test_spell_logic.TestJumpSpellFeatures object at 0x1044c8af0>
+
+    def test_king_cannot_jump(self):
+        game = SpellChessGame()
+    
+        # artificially place king selection attempt
+        game.board.set_piece_at(chess.E1, chess.Piece(chess.KING, chess.WHITE))
+    
+>       assert game.cast_jump(chess.E1, chess.E3) is False
+E       assert True is False
+E        +  where True = cast_jump(4, 20)
+E        +    where cast_jump = <spell_logic.SpellChessGame object at 0x1045b5bd0>.cast_jump
+E        +    and   4 = chess.E1
+E        +    and   20 = chess.E3
+
+test_spell_logic.py:564: AssertionError
+_ TestJumpSpellFeatures.test_jump_destination_must_be_within_chebyshev_distance_two _
+
+self = <test_spell_logic.TestJumpSpellFeatures object at 0x1044c8c00>
+
+    def test_jump_destination_must_be_within_chebyshev_distance_two(self):
+        game = SpellChessGame()
+    
+        result = game.cast_jump(chess.B1, chess.B4)
+    
+>       assert result is False
+E       assert True is False
+
+test_spell_logic.py:571: AssertionError
+____ TestJumpSpellFeatures.test_jump_fails_if_destination_occupied_by_self _____
+
+self = <test_spell_logic.TestJumpSpellFeatures object at 0x1045c9e50>
+
+    def test_jump_fails_if_destination_occupied_by_self(self):
+        game = SpellChessGame()
+    
+        ok = game.cast_jump(chess.B1, chess.C2)
+    
+>       assert not ok
+E       assert not True
+
+test_spell_logic.py:596: AssertionError
+__ TestJumpSpellFeatures.test_jump_fails_if_destination_occupied_by_opponent ___
+
+self = <test_spell_logic.TestJumpSpellFeatures object at 0x1045ca030>
+
+    def test_jump_fails_if_destination_occupied_by_opponent(self):
+        game = SpellChessGame()
+    
+        game.make_move(chess.E2, chess.E4)
+        game.make_move(chess.E7, chess.E5)
+    
+        ok = game.cast_jump(chess.E4, chess.E5)
+    
+>       assert not ok
+E       assert not True
+
+test_spell_logic.py:606: AssertionError
+_____ TestJumpSpellFeatures.test_new_game_resets_jump_charges_and_cooldown _____
+
+self = <test_spell_logic.TestJumpSpellFeatures object at 0x10435dd90>
+
+    def test_new_game_resets_jump_charges_and_cooldown(self):
+        game = SpellChessGame()
+    
+        game.cast_jump(chess.B1, chess.D3)
+    
+        game.new_game()
+>       assert game.jump_remaining[chess.WHITE] == 3
+E       assert 2 == 3
+
+test_spell_logic.py:643: AssertionError
+_____ TestGameStateDisplay.test_freeze_label_shows_current_player_charges ______
+
+self = <test_spell_logic.TestGameStateDisplay object at 0x1045d4640>
+
+    def test_freeze_label_shows_current_player_charges(self):
+        game = SpellChessGame()
+    
+        assert "5" in game.freeze_info_text()
+    
+        game.cast_freeze(chess.E4)
+    
+>       assert "4" in game.freeze_info_text()
+E       AssertionError: assert '4' in 'Freeze: 5  (cooldown 2)  — pieces in area are frozen'
+E        +  where 'Freeze: 5  (cooldown 2)  — pieces in area are frozen' = freeze_info_text()
+E        +    where freeze_info_text = <spell_logic.SpellChessGame object at 0x1045f2db0>.freeze_info_text
+
+test_spell_logic.py:677: AssertionError
+_________ TestGameStateDisplay.test_freeze_label_shows_cooldown_turns __________
+
+self = <test_spell_logic.TestGameStateDisplay object at 0x1045d4770>
+
+    def test_freeze_label_shows_cooldown_turns(self):
+        game = SpellChessGame()
+    
+        game.cast_freeze(chess.E4)
+    
+>       assert "3" in game.freeze_info_text()
+E       AssertionError: assert '3' in 'Freeze: 5  (cooldown 2)  — pieces in area are frozen'
+E        +  where 'Freeze: 5  (cooldown 2)  — pieces in area are frozen' = freeze_info_text()
+E        +    where freeze_info_text = <spell_logic.SpellChessGame object at 0x1045f31d0>.freeze_info_text
+
+test_spell_logic.py:684: AssertionError
+___________ TestGameStateDisplay.test_freeze_label_shows_frozen_note ___________
+
+self = <test_spell_logic.TestGameStateDisplay object at 0x1044c8d10>
+
+    def test_freeze_label_shows_frozen_note(self):
+        game = SpellChessGame()
+    
+        game.cast_freeze(chess.E7)
+    
+        game.make_move(chess.E2, chess.E4)
+    
+>       assert game.current_turn() == chess.BLACK
+E       assert True == False
+E        +  where True = current_turn()
+E        +    where current_turn = <spell_logic.SpellChessGame object at 0x1045f36a0>.current_turn
+E        +  and   False = chess.BLACK
+
+test_spell_logic.py:700: AssertionError
+=========================== short test summary info ============================
+FAILED test_spell_logic.py::TestStandardChess::test_knight_L_advance - Assert...
+FAILED test_spell_logic.py::TestStandardChess::test_knight_cannot_move_non_L
+FAILED test_spell_logic.py::TestStandardChess::test_bishop_diag_advance - ass...
+FAILED test_spell_logic.py::TestStandardChess::test_bishop_cannot_jump - Asse...
+FAILED test_spell_logic.py::TestStandardChess::test_queen_vertical_advance - ...
+FAILED test_spell_logic.py::TestStandardChess::test_queen_horizontal_advance
+FAILED test_spell_logic.py::TestStandardChess::test_queen_diag_advance - Asse...
+FAILED test_spell_logic.py::TestStandardChess::test_queen_cannot_jump - Asser...
+FAILED test_spell_logic.py::TestStandardChess::test_king_vertical_single_advance
+FAILED test_spell_logic.py::TestStandardChess::test_king_horizontal_single_advance
+FAILED test_spell_logic.py::TestStandardChess::test_king_diag_single_advance
+FAILED test_spell_logic.py::TestStandardChess::test_king_cannot_multi_advance
+FAILED test_spell_logic.py::TestStandardChess::test_pawn_promotion_to_queen
+FAILED test_spell_logic.py::TestStandardChess::test_pawn_promotion_to_knight
+FAILED test_spell_logic.py::TestStandardChess::test_castling_queenside - asse...
+FAILED test_spell_logic.py::TestStandardChess::test_en_passant - assert False...
+FAILED test_spell_logic.py::TestFreezeSpell::test_freeze_charge_reduction - a...
+FAILED test_spell_logic.py::TestFreezeSpell::test_freeze_3x3_area - assert 28...
+FAILED test_spell_logic.py::TestFreezeSpell::test_freeze_affects_opponent_only
+FAILED test_spell_logic.py::TestFreezeSpell::test_freeze_lasts_one_opponent_turn_only
+FAILED test_spell_logic.py::TestFreezeSpell::test_freeze_cooldown_set_to_three_after_cast
+FAILED test_spell_logic.py::TestFreezeSpell::test_freeze_cooldown_decreases_by_one_on_caster_turn
+FAILED test_spell_logic.py::TestJumpSpellFeatures::test_king_cannot_jump - as...
+FAILED test_spell_logic.py::TestJumpSpellFeatures::test_jump_destination_must_be_within_chebyshev_distance_two
+FAILED test_spell_logic.py::TestJumpSpellFeatures::test_jump_fails_if_destination_occupied_by_self
+FAILED test_spell_logic.py::TestJumpSpellFeatures::test_jump_fails_if_destination_occupied_by_opponent
+FAILED test_spell_logic.py::TestJumpSpellFeatures::test_new_game_resets_jump_charges_and_cooldown
+FAILED test_spell_logic.py::TestGameStateDisplay::test_freeze_label_shows_current_player_charges
+FAILED test_spell_logic.py::TestGameStateDisplay::test_freeze_label_shows_cooldown_turns
+FAILED test_spell_logic.py::TestGameStateDisplay::test_freeze_label_shows_frozen_note
+======================== 30 failed, 33 passed in 0.18s =========================

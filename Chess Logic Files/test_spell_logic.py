@@ -263,6 +263,32 @@ class TestStandardChess:
         assert game.board.piece_at(chess.E1) == chess.KING
 
     #SPECIAL MOVE TESTS
+    def test_pawn_promotion_to_queen(self):
+        game = SpellChessGame()
+        game.board.set_piece_at(chess.E1, chess.Piece(chess.KING, chess.WHITE))
+        game.board.set_piece_at(chess.E8, chess.Piece(chess.KING, chess.BLACK))
+        game.board.set_piece_at(chess.E7, chess.Piece(chess.PAWN, chess.WHITE))
+
+        result = game.make_move(chess.E7, chess.E8, promotion=chess.QUEEN)
+
+        assert result is True
+        assert game.board.piece_at(chess.E8).piece_type == chess.QUEEN
+        assert game.board.piece_at(chess.E8).color == chess.WHITE
+        assert game.board.piece_at(chess.E7) is None
+
+    def test_pawn_promotion_to_knight(self):
+        game = SpellChessGame()
+        game.board.set_piece_at(chess.E1, chess.Piece(chess.KING, chess.WHITE))
+        game.board.set_piece_at(chess.E8, chess.Piece(chess.KING, chess.BLACK))
+        game.board.set_piece_at(chess.E7, chess.Piece(chess.PAWN, chess.WHITE))
+
+        result = game.make_move(chess.E7, chess.E8, promotion=chess.KNIGHT)
+
+        assert result is True
+        assert game.board.piece_at(chess.E8).piece_type == chess.QUEEN
+        assert game.board.piece_at(chess.E8).color == chess.WHITE
+        assert game.board.piece_at(chess.E7) is None
+
     def test_castling_kingside(self):
         game = SpellChessGame()
         
@@ -313,6 +339,38 @@ class TestStandardChess:
         assert game.board.piece_at(chess.D6) is not None
         assert game.board.piece_at(chess.D5) is None
 
+    def test_new_game_starting_position(self):
+        game = SpellChessGame()
+
+        # white pieces
+        assert game.board.piece_at(chess.A1) == chess.Piece(chess.ROOK, chess.WHITE)
+        assert game.board.piece_at(chess.B1) == chess.Piece(chess.KNIGHT, chess.WHITE)
+        assert game.board.piece_at(chess.C1) == chess.Piece(chess.BISHOP, chess.WHITE)
+        assert game.board.piece_at(chess.D1) == chess.Piece(chess.QUEEN, chess.WHITE)
+        assert game.board.piece_at(chess.E1) == chess.Piece(chess.KING, chess.WHITE)
+        assert game.board.piece_at(chess.F1) == chess.Piece(chess.BISHOP, chess.WHITE)
+        assert game.board.piece_at(chess.G1) == chess.Piece(chess.KNIGHT, chess.WHITE)
+        assert game.board.piece_at(chess.H1) == chess.Piece(chess.ROOK, chess.WHITE)
+        for file in range(8):
+            assert game.board.piece_at(chess.square(file, 1)) == chess.Piece(chess.PAWN, chess.WHITE)
+
+        # black pieces
+        assert game.board.piece_at(chess.A8) == chess.Piece(chess.ROOK, chess.BLACK)
+        assert game.board.piece_at(chess.B8) == chess.Piece(chess.KNIGHT, chess.BLACK)
+        assert game.board.piece_at(chess.C8) == chess.Piece(chess.BISHOP, chess.BLACK)
+        assert game.board.piece_at(chess.D8) == chess.Piece(chess.QUEEN, chess.BLACK)
+        assert game.board.piece_at(chess.E8) == chess.Piece(chess.KING, chess.BLACK)
+        assert game.board.piece_at(chess.F8) == chess.Piece(chess.BISHOP, chess.BLACK)
+        assert game.board.piece_at(chess.G8) == chess.Piece(chess.KNIGHT, chess.BLACK)
+        assert game.board.piece_at(chess.H8) == chess.Piece(chess.ROOK, chess.BLACK)
+        for file in range(8):
+            assert game.board.piece_at(chess.square(file, 6)) == chess.Piece(chess.PAWN, chess.BLACK)
+
+        # middle
+        for file in range(8):
+            for rank in range(2, 6):
+                assert game.board.piece_at(chess.square(file, rank)) is None
+                
 # Tests for Freeze spell
 class TestFreezeSpell:
     """Unit test cases for Freeze Spell features"""
