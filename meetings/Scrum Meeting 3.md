@@ -21,10 +21,11 @@
 
 - Assigned diagram and requirement update tasks among team members:
 
-  Blein: Will create Sequence diagrams for Freeze and Jump spells
-  Reshma: Update class diagram
-  Jyothsna: Update requirements for Jump spell
-  Benat: Update requirements for Freeze spell
+  - **Blein:** Will create Sequence diagrams for Freeze and Jump spells  
+  - **Reshma:** Update class diagram  
+  - **Jyothsna:** Update requirements for Jump spell  
+  - **Benat:** Update requirements for Freeze spell  
+
 
 ## Next Steps
 
