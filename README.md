@@ -28,7 +28,7 @@ The Product Backlog and Sprint Backlog are maintained in a shared Google Sheet.
 ├── Chess Logic Files/
 │   ├── spell_logic.py
 │   ├── test_spell_logic.py   #Contains the test functions
-│   ├── SPELL_CHESS_RULES.md
+│   ├── Game Spec - README.md  # This is the specification README file provided in the assignment
 ├── meetings/
 |   ├── Sprint Planning Meeting.md
 |   ├── Scrum Meeting 1.md
