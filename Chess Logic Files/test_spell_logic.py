@@ -75,8 +75,8 @@ class TestStandardChess:
         result = game.make_move(chess.E4, chess.E6)
 
         assert result is False
-        assert game.board.piece_at(chess.E6) is None
-        assert game.board.piece_at(chess.E4) is not None
+        assert game.board.piece_at(chess.E6).piece_type is None
+        assert game.board.piece_at(chess.E4).piece_type is not None
 
     def test_pawn_captures_diagonally(self):
         # white(e4) captures black(d5)
@@ -92,7 +92,7 @@ class TestStandardChess:
         assert result is True
         assert game.board.piece_at(chess.D5).piece_type == chess.PAWN
         assert game.board.piece_at(chess.D5).color == chess.WHITE
-        assert game.board.piece_at(chess.E4) is None
+        assert game.board.piece_at(chess.E4).piece_type is None
 
     def test_pawn_cannot_capture_straight(self):
         game = SpellChessGame()
@@ -130,7 +130,7 @@ class TestStandardChess:
         result = game.make_move(chess.A1, chess.B1)
 
         assert result is True
-        assert game.board.piece_at(chess.A1) is None
+        assert game.board.piece_at(chess.A1).piece_type is None
         assert game.board.piece_at(chess.B1).piece_type == chess.ROOK
 
     def test_rook_cannot_jump(self):
@@ -139,7 +139,7 @@ class TestStandardChess:
         result = game.make_move(chess.A1, chess.A3)
 
         assert result is False
-        assert game.board.piece_at(chess.A3) is None
+        assert game.board.piece_at(chess.A3).piece_type is None
     
     #KNIGHT TESTS
     def test_knight_L_advance(self):
@@ -148,8 +148,8 @@ class TestStandardChess:
         result = game.make_move(chess.B1, chess.A3)
         
         assert result is True
-        assert game.board.piece_at(chess.B1) is None
-        assert game.board.piece_at(chess.A3) == chess.KNIGHT
+        assert game.board.piece_at(chess.B1).piece_type is None
+        assert game.board.piece_at(chess.A3).piece_type == chess.KNIGHT
 
     def test_knight_cannot_move_non_L(self):
         game = SpellChessGame()
@@ -157,13 +157,14 @@ class TestStandardChess:
         result = game.make_move(chess.B1, chess.B3)
         
         assert result is False
-        assert game.board.piece_at(chess.B1) == chess.KNIGHT
+        assert game.board.piece_at(chess.B1).piece_type == chess.KNIGHT
 
     def test_knight_can_jump(self):
         game = SpellChessGame()
         result = game.make_move(chess.B1, chess.A3)
         
         assert result is True
+        assert game.board.piece_at(chess.A3).piece_type == chess.KNIGHT
 
     #BISHOP TESTS
     def test_bishop_diag_advance(self):
@@ -172,8 +173,8 @@ class TestStandardChess:
         result = game.make_move(chess.C1, chess.A3)
         
         assert result is True
-        assert game.board.piece_at(chess.C1) is None
-        assert game.board.piece_at(chess.A3) == chess.BISHOP
+        assert game.board.piece_at(chess.C1).piece_type is None
+        assert game.board.piece_at(chess.A3).piece_type == chess.BISHOP
 
     def test_bishop_cannot_jump(self):
         game = SpellChessGame()
@@ -181,7 +182,7 @@ class TestStandardChess:
         result = game.make_move(chess.C1, chess.E3)
         
         assert result is False
-        assert game.board.piece_at(chess.C1) == chess.BISHOP   
+        assert game.board.piece_at(chess.C1).piece_type == chess.BISHOP   
     
     #QUEEN TESTS
     def test_queen_vertical_advance(self):
@@ -192,7 +193,7 @@ class TestStandardChess:
         
         assert result is True
         assert game.board.piece_at(chess.D1) is None
-        assert game.board.piece_at(chess.D3) == chess.QUEEN
+        assert game.board.piece_at(chess.D3).piece_type == chess.QUEEN
 
     def test_queen_horizontal_advance(self):
         game = SpellChessGame()
@@ -202,7 +203,7 @@ class TestStandardChess:
         
         assert result is True
         assert game.board.piece_at(chess.D1) is None
-        assert game.board.piece_at(chess.C1) == chess.QUEEN
+        assert game.board.piece_at(chess.C1).piece_type == chess.QUEEN
 
     def test_queen_diag_advance(self):
         game = SpellChessGame()
@@ -212,7 +213,7 @@ class TestStandardChess:
         
         assert result is True
         assert game.board.piece_at(chess.D1) is None
-        assert game.board.piece_at(chess.B3) == chess.QUEEN
+        assert game.board.piece_at(chess.B3).piece_type == chess.QUEEN
 
     def test_queen_cannot_jump(self):
         game = SpellChessGame()
@@ -220,7 +221,7 @@ class TestStandardChess:
         result = game.make_move(chess.D1, chess.D3)
         
         assert result is False
-        assert game.board.piece_at(chess.D1) == chess.QUEEN
+        assert game.board.piece_at(chess.D1).piece_type == chess.QUEEN
 
     #KING TESTS
     def test_king_vertical_single_advance(self):
@@ -230,8 +231,8 @@ class TestStandardChess:
         result = game.make_move(chess.E1, chess.E2)
 
         assert result is True
-        assert game.board.piece_at(chess.E1) is None
-        assert game.board.piece_at(chess.E2) == chess.KING
+        assert game.board.piece_at(chess.E1).piece_type is None
+        assert game.board.piece_at(chess.E2).piece_type == chess.KING
     
     def test_king_horizontal_single_advance(self):
         game = SpellChessGame()
@@ -240,8 +241,8 @@ class TestStandardChess:
         result = game.make_move(chess.E1, chess.F1)
 
         assert result is True
-        assert game.board.piece_at(chess.E1) is None
-        assert game.board.piece_at(chess.F1) == chess.KING 
+        assert game.board.piece_at(chess.E1).piece_type is None
+        assert game.board.piece_at(chess.F1).piece_type == chess.KING 
     
     def test_king_diag_single_advance(self):
         game = SpellChessGame()
@@ -250,8 +251,8 @@ class TestStandardChess:
         result = game.make_move(chess.E1, chess.D2)
 
         assert result is True
-        assert game.board.piece_at(chess.E1) is None
-        assert game.board.piece_at(chess.D2) == chess.KING
+        assert game.board.piece_at(chess.E1).piece_type is None
+        assert game.board.piece_at(chess.D2).piece_type == chess.KING
 
     def test_king_cannot_multi_advance(self):
         game = SpellChessGame()
@@ -260,13 +261,12 @@ class TestStandardChess:
         result = game.make_move(chess.E1, chess.E3)
 
         assert result is False
-        assert game.board.piece_at(chess.E1) == chess.KING
+        assert game.board.piece_at(chess.E1).piece_type == chess.KING
 
     #SPECIAL MOVE TESTS
     def test_pawn_promotion_to_queen(self):
         game = SpellChessGame()
-        game.board.set_piece_at(chess.E1, chess.Piece(chess.KING, chess.WHITE))
-        game.board.set_piece_at(chess.E8, chess.Piece(chess.KING, chess.BLACK))
+        game.board.clear()
         game.board.set_piece_at(chess.E7, chess.Piece(chess.PAWN, chess.WHITE))
 
         result = game.make_move(chess.E7, chess.E8, promotion=chess.QUEEN)
@@ -274,12 +274,11 @@ class TestStandardChess:
         assert result is True
         assert game.board.piece_at(chess.E8).piece_type == chess.QUEEN
         assert game.board.piece_at(chess.E8).color == chess.WHITE
-        assert game.board.piece_at(chess.E7) is None
+        assert game.board.piece_at(chess.E7).piece_type is None
 
     def test_pawn_promotion_to_knight(self):
         game = SpellChessGame()
-        game.board.set_piece_at(chess.E1, chess.Piece(chess.KING, chess.WHITE))
-        game.board.set_piece_at(chess.E8, chess.Piece(chess.KING, chess.BLACK))
+        game.board.clear()
         game.board.set_piece_at(chess.E7, chess.Piece(chess.PAWN, chess.WHITE))
 
         result = game.make_move(chess.E7, chess.E8, promotion=chess.KNIGHT)
@@ -287,7 +286,7 @@ class TestStandardChess:
         assert result is True
         assert game.board.piece_at(chess.E8).piece_type == chess.QUEEN
         assert game.board.piece_at(chess.E8).color == chess.WHITE
-        assert game.board.piece_at(chess.E7) is None
+        assert game.board.piece_at(chess.E7).piece_type is None
 
     def test_castling_kingside(self):
         game = SpellChessGame()
@@ -301,8 +300,8 @@ class TestStandardChess:
         assert result is True
         assert game.board.piece_at(chess.G1).piece_type == chess.KING
         assert game.board.piece_at(chess.F1).piece_type == chess.ROOK
-        assert game.board.piece_at(chess.E1) is None
-        assert game.board.piece_at(chess.H1) is None
+        assert game.board.piece_at(chess.E1).piece_type is None
+        assert game.board.piece_at(chess.H1).piece_type is None
     
     def test_castling_queenside(self):
         game = SpellChessGame()
@@ -316,8 +315,8 @@ class TestStandardChess:
         assert result is True
         assert game.board.piece_at(chess.C1).piece_type == chess.KING
         assert game.board.piece_at(chess.D1).piece_type == chess.ROOK
-        assert game.board.piece_at(chess.E1) is None
-        assert game.board.piece_at(chess.A1) is None
+        assert game.board.piece_at(chess.E1).piece_type is None
+        assert game.board.piece_at(chess.A1).piece_type is None
     
     def test_en_passant(self):
         game = SpellChessGame()
@@ -336,8 +335,8 @@ class TestStandardChess:
         result = game.make_move(chess.E5, chess.D6)  # white captures en passant
 
         assert result is True
-        assert game.board.piece_at(chess.D6) is not None
-        assert game.board.piece_at(chess.D5) is None
+        assert game.board.piece_at(chess.D6).piece_type is not None
+        assert game.board.piece_at(chess.D5).piece_type is None
 
     def test_new_game_starting_position(self):
         game = SpellChessGame()
