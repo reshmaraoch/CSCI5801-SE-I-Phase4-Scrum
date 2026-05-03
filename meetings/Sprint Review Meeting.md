@@ -2,7 +2,7 @@
 
 **Date:** 05/02/2026  
 **Time:** 7:30 PM CST  
-**Duration:** 1 hour 45 minutes  
+**Duration:** 1 hour 30 minutes  
 
 **Members Present:**
 - Benat Froemming-Aldanondo
